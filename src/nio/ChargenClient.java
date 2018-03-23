@@ -15,17 +15,19 @@ public class ChargenClient {
 		//SocketAddress指示要连接的主机和端口
 		SocketAddress address = new InetSocketAddress("192.168.100.104", 8080);
 		try {
-			//通道以阻塞模式打开，所以在这行之后的代码在真正建立连接之前不会执行
 			System.out.println("建立连接中...");
-			SocketChannel client = SocketChannel.open(address);
+			//通道以【阻塞模式】打开，所以在这行之后的代码在真正建立连接之前不会执行
+			SocketChannel clientSocketChannel = SocketChannel.open(address);
 			System.out.println("连接成功");
 			
-			ByteBuffer buffer = ByteBuffer.allocate(74);
-			WritableByteChannel out = Channels.newChannel(System.out);
+			ByteBuffer buffer = ByteBuffer.allocate(74);	//创建容量为74字节的ByteBuffer
+			WritableByteChannel outChannel = Channels.newChannel(System.out);	//将System.out封装在一个通道中
 			
-			while(client.read(buffer) != -1) {
+			//将ByteBuffer对象传递给通道的read()方法，通道会用从Socket读取的数据填充这个缓冲区，它返回成功读取并存储在缓冲区的字节数。
+			//返回-1表示数据结束。
+			while(clientSocketChannel.read(buffer) != -1) {
 				buffer.flip();
-				out.write(buffer);
+				outChannel.write(buffer);//将读取的数据写入与System.out连接的输出通道中
 				buffer.clear();
 			}
 		} catch (IOException e) {
