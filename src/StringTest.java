@@ -66,4 +66,18 @@ public class StringTest {
 		String b = "a";
 		System.out.println(a==b);//true
 	}
+	
+	@Test
+	public void test5(){
+		String str1 = "str";
+		String str2 = "ing";
+
+		String str3 = "str" + "ing";
+		String str4 = str1 + str2;
+		System.out.println(str3 == str4);//false
+
+		String str5 = "string";
+		System.out.println(str3 == str5);//true
+	}
+	
 }

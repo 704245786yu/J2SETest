@@ -12,13 +12,15 @@ class Child extends Parent{
 	}
 }
 
-/**演示类的主动使用*/
+/**演示类的主动使用
+ * 一个类或接口在初次"使用"前，必须进行初始化。这里的"使用"指主动使用。
+ * */
 public class Demo1 {
 	public static void main(String[] args) {
 		/*打印输出：
 		 * Parent init
 			Child init
-			由此克制，系统首先装载Parent类，接着再装载Child类。符合主动装载中的两个条件：
+			由此可知，系统首先装载Parent类，接着再装载Child类。符合主动装载中的两个条件：
 			1、使用new关键字创建类的实例会装载相关类。
 			2、在初始化子类时，必须先初始化父类。
 		 * */
