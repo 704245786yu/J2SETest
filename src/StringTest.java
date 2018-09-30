@@ -1,4 +1,4 @@
-import java.util.HashMap;
+import java.util.*;
 
 import org.junit.Test;
 
@@ -78,6 +78,16 @@ public class StringTest {
 
 		String str5 = "string";
 		System.out.println(str3 == str5);//true
+	}
+
+	@Test
+	public void test6(){
+		Set<String> set = new HashSet<>();
+		set.add("aa");
+		set.add("bb");
+		List<String> list = new ArrayList<>(set);
+		set.addAll(list);
+		System.out.println(list);
 	}
 	
 }
