@@ -68,4 +68,5 @@ public class NumberTest {
 	public void test8(){
 		Integer.valueOf(null);
 	}
+
 }

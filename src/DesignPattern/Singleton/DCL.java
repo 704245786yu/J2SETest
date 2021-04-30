@@ -5,7 +5,7 @@ package DesignPattern.Singleton;
  * */
 public class DCL {
 
-	private volatile static DCL instance;//注意：这里必须使用volatile修饰
+	private volatile static DCL instance;//注意：这里必须使用volatile修饰，否则在多线程情况下会发生对象半初始化问题
 	
 	public static DCL getInstance(){
 		if(instance == null){

@@ -8,7 +8,8 @@ public class WeatherData extends Observable {
 
 	public void setMeasurements(float temperature){
 		System.out.println("WeatherData：接收到新数据了，开始通知所有观察者");
+		//Observable的changed变量可用于控制是否确实要执行通知操作。
 		super.setChanged();
-		super.notifyObservers(temperature);
+		super.notifyObservers(temperature); //每次通知完后，都会清除changed状态
 	}
 }

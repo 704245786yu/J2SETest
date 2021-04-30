@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.junit.Test;
 
@@ -89,5 +91,42 @@ public class StringTest {
 		set.addAll(list);
 		System.out.println(list);
 	}
-	
+
+	@Test
+	public void test7(){
+		String a = null;
+		String b = null;
+		System.out.println(a+"/"+b);
+	}
+
+	// 过滤特殊字符
+	@Test
+    public void replaceAll(){
+        String str = "是豆腐，()哈【】哈+hhh";
+
+        String regEx = "[`~!@#$%^&*()\\-+={}':;,\\[\\].<>/?￥%…（）_+|【】‘；：”“’。，、？\\s]";
+//        Pattern p = Pattern.compile(regEx);
+//        Matcher m = p.matcher(str);
+//        System.out.println(m.replaceAll(""));
+
+	    String specificSymbol = "[\\(\\)\\+]";
+        System.out.println(specificSymbol);
+        System.out.println(str.replaceAll(regEx,""));
+    }
+
+    @Test
+    public void join(){
+	    String[] a = new String[2];
+	    a[1] = "a";
+        System.out.println(String.join(",",a));
+    }
+
+    @Test
+    public void findSlash(){
+	    String a = "lla/啊啊啊";
+        System.out.println(a.contains("/"));
+        String[] strs = a.split("/");
+        for(String s : strs)
+            System.out.println(s);
+    }
 }

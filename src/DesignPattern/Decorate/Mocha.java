@@ -3,7 +3,7 @@ package DesignPattern.Decorate;
 /**装饰者类
  * 调料-摩卡*/
 public class Mocha extends CondimentDecorator{
-    /**保存被装饰者*/
+    /**保存被装饰者，该实例变量也可放在CondimentDecorator抽象类里*/
     Beverage beverage;
 
     public Mocha(Beverage beverage) {

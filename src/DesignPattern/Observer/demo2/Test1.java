@@ -5,7 +5,7 @@ import org.junit.Test;
 public class Test1 {
 
 	/**与demo1中的观察者模式的实现方式稍有不同，
-	 * Observer实现类中，不再保存Observer接口对象的引用，也不再主动注册了。注册由Subject对象自己完成。
+	 * Observer实现类中，不再保存Subject接口对象的引用，也不再主动注册了。注册由Subject对象自己完成。
 	 * */
 	@Test
 	public void test1(){

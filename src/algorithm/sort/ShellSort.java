@@ -1,6 +1,8 @@
-package algorithm;
+package algorithm.sort;
 
-/**希尔排序
+import algorithm.AbstractAlgorithm;
+
+/**希尔排序，又称缩小增量排序(diminishing increment sort)
  * */
 public class Shell extends AbstractAlgorithm {
 
@@ -45,4 +47,18 @@ public class Shell extends AbstractAlgorithm {
 		System.out.println(isSorted(a));
 		show(a);
 	}
+
+	public void shellSort(int e[],int n){
+	    for(int g=n/2; g>=1; g=g/3+1){
+            /* i是从第1个子序列开始做插入排序.因为每个子序列的步长为g，所以第1个子序列的第1个元素下标为0，第2个元素下标为g。
+            * 第2个子序列第一个元素下标为1，第2个元素下标为1+g，之后的子序列以此类推。
+            * */
+	        for(int i=g;i<n;i++){
+	            int t,j;
+                for(t=e[i],j=i; j>g && t<e[j-g]; j-=g)
+                    e[j] = e[j-g];
+                e[j] = t;
+            }
+        }
+    }
 }
