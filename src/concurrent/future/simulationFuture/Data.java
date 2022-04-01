@@ -1,6 +1,6 @@
 package concurrent.future.simulationFuture;
 
-/**用户希望获取的数据
+/**获取数据的接口
  * */
 public interface Data {
 	String getResult();

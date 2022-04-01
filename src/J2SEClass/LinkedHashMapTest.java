@@ -1,3 +1,5 @@
+package J2SEClass;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 

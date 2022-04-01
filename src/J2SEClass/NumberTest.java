@@ -1,3 +1,5 @@
+package J2SEClass;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
@@ -12,6 +14,11 @@ public class NumberTest {
 		int i = 123456789;
 		float f = i;
 		System.out.println(f);//1.23456792E8
+	}
+
+	@Test
+	public void IntegerMax(){
+		System.out.println(Integer.MAX_VALUE+" "+(Integer.MAX_VALUE+1));
 	}
 
 	@Test
@@ -63,10 +70,27 @@ public class NumberTest {
 		a = new BigDecimal("3.5");
 		System.out.println(a.subtract(null));//NullPointerExceptioin
 	}
-	
-	@Test
-	public void test8(){
-		Integer.valueOf(null);
-	}
 
+	@Test
+    public void test9(){
+        System.out.println(BigDecimal.ZERO);
+    }
+
+    @Test
+    public void test10(){
+        System.out.println(Math.random());
+        System.out.println(Math.random()*9);
+        System.out.println(Math.random()*9+1);
+        int i = (int)((Math.random()*9+1)*100000);
+        System.out.println(i);
+    }
+
+    @Test
+	public void testBitOperator(){
+		System.out.println( (1<<0) + " " + Integer.toBinaryString(1<<0));
+		System.out.println( (1<<1) + " " + Integer.toBinaryString(1<<1));
+		System.out.println( (1<<2) + " " + Integer.toBinaryString(1<<2));
+		System.out.println( (1<<3) + " " + Integer.toBinaryString(1<<3));
+		System.out.println( (1<<4) + " " + Integer.toBinaryString(1<<4));
+	}
 }

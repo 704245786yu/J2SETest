@@ -1,3 +1,5 @@
+package J2SEClass;
+
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -128,5 +130,21 @@ public class StringTest {
         String[] strs = a.split("/");
         for(String s : strs)
             System.out.println(s);
+    }
+
+    @Test
+    public void format(){
+	    Long id = 1000L;
+        String str = String.format("AND ck.medicalAreaId = %1$d AND g47.medicalAreaId = %1$d",id);
+        System.out.println(str);
+
+        str = String.format("没有对应的target upstreamName:%s, target:%s, machineRoom:%s", "ups", "172", "test");
+        System.out.println(str);
+    }
+    @Test
+    public void tt(){
+        String str="PluginRules";
+        str=str.substring(0,1).toLowerCase().concat(str.substring(1));
+        System.out.println(str);
     }
 }

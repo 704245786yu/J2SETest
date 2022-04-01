@@ -1,10 +1,14 @@
 package algorithm.sort;
 
+import java.util.Arrays;
+
+import org.junit.Test;
+
 import algorithm.AbstractAlgorithm;
 
-/**希尔排序，又称缩小增量排序(diminishing increment sort)
+/** 希尔排序，又称缩小增量排序(diminishing increment sort)
  * */
-public class Shell extends AbstractAlgorithm {
+public class ShellSort extends AbstractAlgorithm {
 
 	@SuppressWarnings("rawtypes")
 	@Override
@@ -42,11 +46,21 @@ public class Shell extends AbstractAlgorithm {
 
 	public static void main(String[] args) {
 		String[] a = {"S","H","E","L","L","S","O","R","T","E","X","A","M","P","L","E"};
-		AbstractAlgorithm alg = new Shell();
+		AbstractAlgorithm alg = new ShellSort();
 		alg.sort(a);
 		System.out.println(isSorted(a));
 		show(a);
 	}
+
+    /**《算法基础》实现方法
+     * 问题？书上的此方式无法计算出正确的值，待查
+     * */
+	@Test
+    public void testShellSort(){
+	    int arr[] = {9,8,7,6,5,4,3,2,1};
+	    shellSort(arr,arr.length);
+        System.out.println(Arrays.toString(arr));
+    }
 
 	public void shellSort(int e[],int n){
 	    for(int g=n/2; g>=1; g=g/3+1){
@@ -59,6 +73,8 @@ public class Shell extends AbstractAlgorithm {
                     e[j] = e[j-g];
                 e[j] = t;
             }
+            if(g==1)
+                break;
         }
     }
 }
